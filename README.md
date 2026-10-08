@@ -4,6 +4,15 @@ Backend en **Java Spring Boot** para la gestión de conciertos y reserva concurr
 
 ---
 
+## Documentación del Proyecto
+
+* 📄 [Contrato de API (REST & GraphQL)](./api_contract.md)
+* 🏛️ [Decisiones de Arquitectura y Diseño](./Documento_Decisiones.md)
+* 🐳 [Configuración Docker Compose](./docker-compose.yml)
+* 📐 [Esquema de GraphQL](./src/main/resources/graphql/schema.graphqls)
+
+---
+
 ## Tecnologías Utilizadas
 
 - **Java 17 / Spring Boot 3.x**
