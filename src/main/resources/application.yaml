@@ -1,3 +1,19 @@
 spring:
   application:
     name: ticket-manager
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+          client-id: client-id
+  graphql:
+    http:
+      enabled: true
+      path: /graphql
+aws:
+  dynamodb:
+    endpoint: http://localhost:8000
+    region: us-east-1
+    access-key: dummy
+    secret-key: dummy

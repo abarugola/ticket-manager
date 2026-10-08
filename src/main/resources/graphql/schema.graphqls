@@ -1,0 +1,56 @@
+enum ConcertStatus {
+    AVAILABLE
+    SOLD_OUT
+}
+
+type Query {
+    concerts: [Concert]
+    concertsByStatus(status: ConcertStatus!): [Concert]
+    concertById(id: ID!): Concert
+    concertDetailById(id: ID!): ConcertDetail
+}
+
+type Mutation {
+    confirmReservation(input: ReservationInput!): ReservationResponse!
+}
+
+type Concert {
+    id: ID!
+    name: String!
+    artist: String!
+    venue: String!
+    date: String!
+    availabilityStatus: String!
+    totalSeats: Int!
+    soldSeats: Int!
+}
+
+enum SeatStatus {
+    AVAILABLE
+    HELD
+    SOLD
+}
+
+type Seat {
+    id: String!
+    row: String!
+    number: Int!
+    price: Float!
+    status: SeatStatus!
+}
+
+type ConcertDetail {
+    concert: Concert!
+    availableSeats: [Seat!]!
+}
+input ReservationInput {
+    concertId: ID!
+    seatIds: [String!]!
+}
+
+type ReservationResponse {
+    success: Boolean!
+    message: String!
+    unavailableSeats: [String!]
+}
+
